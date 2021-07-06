@@ -1,21 +1,18 @@
 package strategy
 
-import "fmt"
+type Duck interface {
+	Display()
+	QuackBehavior
+}
 
-type Duck struct {
-	Name          string
-	flyBehavior   FlyBehavior
+type DuckBehavior struct {
 	quackBehavior QuackBehavior
 }
 
-func (d Duck) PerformFly() {
-	d.flyBehavior.Fly()
-}
-
-func (d Duck) PerformQuack() {
+func (d DuckBehavior) Quack() {
 	d.quackBehavior.Quack()
 }
 
-func (d Duck) Swim() {
-	fmt.Println("すべての鴨は浮かびます。おとりの鴨でも！")
-}
+//func (d Duck) Swim() {
+//	fmt.Println("すべての鴨は浮かびます。おとりの鴨でも！")
+//}

@@ -6,6 +6,6 @@ type Quack struct {
 	QuackBehavior
 }
 
-func (q *Quack) Quack() {
+func (q Quack) Quack() {
 	fmt.Println("ガーガー！")
 }

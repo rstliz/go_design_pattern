@@ -5,8 +5,10 @@ import (
 )
 
 func main() {
-	mallard := &strategy.MallardDuck{}
-	mallard.Display()
-	mallard.PerformQuack()
-	mallard.PerformFly()
+	performDuck(strategy.NewMallardDuck())
+}
+
+func performDuck(d strategy.Duck) {
+	d.Display()
+	d.Quack()
 }

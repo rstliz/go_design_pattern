@@ -3,11 +3,14 @@ package strategy
 import "fmt"
 
 type MallardDuck struct {
-	Duck
-	flyBehavior   FlyWithWings
-	quackBehavior Quack
+	DuckBehavior
 }
 
-func (d Duck) Display() {
-	fmt.Println("本物のマガモです。")
+func NewMallardDuck() *MallardDuck {
+	d := &MallardDuck{DuckBehavior{quackBehavior: Quack{}}}
+	return d
+}
+
+func (d MallardDuck) Display() {
+	fmt.Println("本物のマガモです")
 }
