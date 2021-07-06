@@ -1,4 +1,4 @@
-package strategy
+package ducksim
 
 import "fmt"
 
@@ -7,7 +7,12 @@ type MallardDuck struct {
 }
 
 func NewMallardDuck() *MallardDuck {
-	d := &MallardDuck{DuckBehavior{quackBehavior: Quack{}}}
+	d := &MallardDuck{
+		DuckBehavior{
+			quackBehavior: Quack{},
+			flyBehavior:   FlyWithWings{},
+		},
+	}
 	return d
 }
 

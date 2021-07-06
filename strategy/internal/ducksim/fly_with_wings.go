@@ -1,8 +1,9 @@
-package strategy
+package ducksim
 
 import "fmt"
 
 type FlyWithWings struct {
+	FlyBehavior
 }
 
 func (f FlyWithWings) Fly() {

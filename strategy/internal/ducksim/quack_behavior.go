@@ -1,4 +1,4 @@
-package strategy
+package ducksim
 
 type QuackBehavior interface {
 	Quack()
