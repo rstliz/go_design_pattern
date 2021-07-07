@@ -1,0 +1,64 @@
+@startuml
+
+package ducksim <<Folder>> {
+    interface Duck {
+        + Display()
+        + Swim()
+    }
+    interface FlyBehavior {
+        + Fly()
+    }
+    interface QuackBehavior {
+        + Quack()
+    }
+    FlyBehavior <|-- Duck
+    QuackBehavior <|-- Duck
+
+    class DuckBehavior {
+	    - QuackBehavior quackBehavior
+	    - FlyBehavior flyBehavior
+        + Quack()
+        + Fly()
+        + Swim()
+    }
+    FlyBehavior <|.. DuckBehavior
+    QuackBehavior <|.. DuckBehavior
+
+    class FlyWithWings {
+        + Fly()
+    }
+    FlyBehavior <|.. FlyWithWings
+    class FlyNoWay {
+        + Fly()
+    }
+    FlyBehavior <|.. FlyNoWay
+
+    class MuteQuack {
+        + Quack()
+    }
+    QuackBehavior <|.. MuteQuack
+    class Quack {
+        + Quack()
+    }
+    QuackBehavior <|.. Quack
+
+
+    class MallardDuck {
+        + DuckBehavior
+        + MallardDuck NewMallardDuck()
+        + Display()
+    }
+    Duck <|.. MallardDuck
+    MallardDuck *-- DuckBehavior
+
+    class ModelDuck {
+        + DuckBehavior
+        + ModelDuck NewModelDuck()
+        + Display()
+    }
+    Duck <|.. ModelDuck
+    ModelDuck *-- DuckBehavior
+}
+
+
+@enduml
