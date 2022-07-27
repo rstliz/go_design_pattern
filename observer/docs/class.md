@@ -3,50 +3,50 @@ classDiagram
 
 class Subject {
   <<interface>>
-  +registerObserver()
-  +removeObserver()
-  +notifyObserver()
+  +RegisterObserver()
+  +RemoveObserver()
+  +NotifyObserver()
 }
 
 class Observer {
   <<interface>>
-  +update()
+  +Update()
 }
 
 class DisplayElement {
   <<interface>>
-  +display()
+  +Display()
 }
 
 class WeatherData {
-  +registerObserver()
-  +removeObserver()
-  +notifyObserver()
+  +RegisterObserver()
+  +RemoveObserver()
+  +NotifyObserver()
 
-  +getTemperature()
-  +getHumidity()
-  +getPressure()
-  +measurementsChanged()
+  +GetTemperature()
+  +GetHumidity()
+  +GetPressure()
+  +MeasurementsChanged()
 }
 
 class CurrentConditionsDisplay {
-  +update()
-  +display()
+  +Update()
+  +Display()
 }
 
 class StatisticsDisplay {
-  +update()
-  +display()
+  +Update()
+  +Display()
 }
 
 class ThirdPartyDisplay {
-  +update()
-  +display()
+  +Update()
+  +Display()
 }
 
 class ForecastDisplay {
-  +update()
-  +display()
+  +Update()
+  +Display()
 }
 
 
