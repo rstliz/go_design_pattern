@@ -1,3 +1,3 @@
-module github.com/rstliz/weather_observer
+module weather_observer
 
 go 1.18
